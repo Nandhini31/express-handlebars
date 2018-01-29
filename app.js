@@ -23,7 +23,7 @@ app.get('/:id', function(req, res) {
   }
   else {
       var parsedContent = mdParser(content)
-      console.log(parsedContent)
+      console.log("PARSED CONTENT",parsedContent)
       res.render('main',{body:parsedContent})
       }
   });

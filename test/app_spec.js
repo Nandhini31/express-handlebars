@@ -49,20 +49,31 @@ describe('App', () => {
         chai.request('http://localhost:3000')
           .get('/valves')
           .end((err, res) => {
+            let content = 
+              `<!doctype html>
+              <html>
+                  <head>
+                      <title>Welcome to Acme</title>
+                  </head>
+                  <body>
+                      <h1 id="valves">Valves</h1>\n<p>Acme Co. valves are amongst the highest quality in the industry. Whether it&#39;s for industrial, commercial, medical or space exploration, you can always count on an Acme Co. valve.</p>\n\n
+                  </body>
+              </html>`
+
             expect(err).to.be.null;
-            expect(res.text).to.include('Acme Co. valves are amongst the highest quality in the industry')
+            expect(res.text).to.include(content)
             done();        
           });
       }); 
 
   });
 
-  describe('Checking ', () => {
+  describe('Checking invalid Paths', () => {
     it('responds with status 404 path not found', (done) => {
       chai.request('http://localhost:3000')
         .get('/values')
         .end((err, res) => {
-          expect(res.text).to.have.string('Error: 404 , Page not found!');
+          expect(res.text).to.include('Error: 404 , Page not found!');
           expect(res).to.have.status(404);
           done();
         });
