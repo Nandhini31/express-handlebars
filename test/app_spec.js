@@ -4,6 +4,10 @@ var app = require('../app');
 
 var expect = chai.expect;
 
+var fileSystem = require('fs');
+var mdParser = require('marked')
+var path = require ('path');
+
 chai.use(chaiHttp);
 
 describe('App', function() {
@@ -29,5 +33,7 @@ describe('App', function() {
         });
     });
   });
+
+
 
 });
