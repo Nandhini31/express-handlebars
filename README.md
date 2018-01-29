@@ -1,19 +1,28 @@
 # How to run the application
-- `npm i` install dependencies 
+- Clone the project and cd into it
+- `npm install` install dependencies 
 - `npm start`  start the application
 - `npm test` run tests
 
 
 # Design and Approach 
 
+The approach started with breaking down the problem into small steps and indetifying dependent packages. 
 
-I started with breaking down the problem into small steps. I narrowed down the main technologies to use i.e Express.js . node.js and Mocha and Chai. Next I moved on to the View Engine. After researching and trying different ones like Pug,EJS and Handlebar. I settled with  Handlebar as converting the markdown to Handlebar was straightforward with lot of existing libraries and compatible with test libraries Mocha and Chai. 
+I followed a TDD approach  Red-Green-Refactor. 
 
-I followed  a TDD approach. I started with the smallest functionality and Red-Green-Refactor.
+After researching and trying different ones like Pug, EJS and Handlebar. Advantages of handlebar was simple parsing of markdown for templating also compatibility with testing libraries(Mocha and Chai)
 
-Folder Structure includes a view folder that contains the default layout for handlebar which is essentially template.html. In the test folder app-spec.js includes all the tests for the application. 
 
-Tests include positive test cases like Status 200, page contains the right content for the right route . Negative test cases include testing 404 Error when a route does not exist. 
+
+Code Structure
+
+    - App.js - Entry point to the application. Routes are defined here
+
+    - ViewS/layouts/main.handlebars which contains default layout i.e template for handlebars
+
+    - test/app_spec.js - Contains end to end tests. Test cases include positive test cases like Status 200, page contains the right content for the right route . Negative test cases include testing 404 Error when a route does not exist
+
 
 Dependencies
 
@@ -23,9 +32,9 @@ Dependencies
 
 Future Improvement
 
-    - I would have liked to mock the calls and use stub for stubbing test data using Sinon.
+    - Stubs for test data and Mock for making calls using Sinon
 
-# Tech Stack 
+# Built With
 
 - Node +  Express.js 
 - Package Manager: npm

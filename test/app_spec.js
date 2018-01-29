@@ -40,32 +40,21 @@ describe('App', () => {
           .get('/about-page')
           .end((err, res) => {
             expect(err).to.be.null;
-            expect(res.text).to.include('This is the About page')
+            expect(res.text).to.include('<h1 id="this-is-the-about-page">This is the About page</h1>')
             done();        
           });
       });  
 
       it('contains the right content for a different page', (done) => {
+        const content = ``
         chai.request('http://localhost:3000')
-          .get('/valves')
+          .get('/about-page')
           .end((err, res) => {
-            let content = 
-              `<!doctype html>
-              <html>
-                  <head>
-                      <title>Welcome to Acme</title>
-                  </head>
-                  <body>
-                      <h1 id="valves">Valves</h1>\n<p>Acme Co. valves are amongst the highest quality in the industry. Whether it&#39;s for industrial, commercial, medical or space exploration, you can always count on an Acme Co. valve.</p>\n\n
-                  </body>
-              </html>`
-
             expect(err).to.be.null;
-            expect(res.text).to.include(content)
+            expect(res.text).to.include("<p>Acme Co. is a reputable maker of widgets and is an international brand.</p>\n<p>Thank you for your interest in our services. Please contact us at enquiries@acme.com.</p>")
             done();        
           });
       }); 
-
   });
 
   describe('Checking invalid Paths', () => {
