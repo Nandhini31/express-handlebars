@@ -1,5 +1,6 @@
-# How to run the application
-- Clone the project and cd into it
+# How to set up and run the application
+
+- Clone the project and navigate into the folder
 - `npm install` install dependencies 
 - `npm start`  start the application
 - `npm test` run tests

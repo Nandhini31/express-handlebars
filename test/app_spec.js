@@ -57,7 +57,7 @@ describe('App', () => {
       }); 
   });
 
-  describe('Checking invalid Paths', () => {
+  describe('Checking invalid routes', () => {
     it('responds with status 404 path not found', (done) => {
       chai.request('http://localhost:3000')
         .get('/values')
