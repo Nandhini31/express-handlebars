@@ -5,6 +5,14 @@
 - `npm start`  start the application
 - `npm test` run tests
 
+# User Stories
+
+ ```
+ As a User when I hit a route in the browser for whom content exists in content folder I should get the right content for the route
+
+ As a User when I hit a route in the browser  for route is not defined, I should get a 404, page not found error 
+
+ ```
 
 # Design and Approach 
 
@@ -14,7 +22,7 @@ After trying out  different view engines like Pug, EJS and Handlebar. Advantages
 
 I had to decide on file system packages, markdown parser that is compatible with Handlebars.
 
-I followed a TDD approach  Red-Green-Refactor. I started implementing tests for status 200 , status 404 and then started testing and  building different routes. The challenge was to compare the html returned by the template engine and the one that is actually rendered on the screen. 
+I followed a Test Driven Development approach to help me write testable and modular code. Red-Green-Refactor. I started implementing tests for status 200 , status 404 and then started testing and  building different routes. The challenge was to compare the html returned by the template engine and the one that is actually rendered on the screen. 
 
 Code Structure
 
@@ -27,7 +35,7 @@ Code Structure
 
 Dependencies
 
-    - Express-handlebars
+    - express-handlebars
     - node file-system 
     - Marked a Markdown parser 
 
