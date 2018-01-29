@@ -7,13 +7,13 @@
 
 # Design and Approach 
 
-The approach started with breaking down the problem into small steps and indetifying dependent packages. 
+The approach started with breaking down the problem into small steps and identifying dependent packages. 
 
-I followed a TDD approach  Red-Green-Refactor. 
+After trying out  different view engines like Pug, EJS and Handlebar. Advantages of handlebar was simple parsing of markdown for templating also compatibility with testing libraries(Mocha and Chai)
 
-After researching and trying different ones like Pug, EJS and Handlebar. Advantages of handlebar was simple parsing of markdown for templating also compatibility with testing libraries(Mocha and Chai)
+I had to decide on file system packages, markdown parser that is compatible with Handlebars.
 
-
+I followed a TDD approach  Red-Green-Refactor. I started implementing tests for status 200 , status 404 and then started testing and  building different routes. The challenge was to compare the html returned by the template engine and the one that is actually rendered on the screen. 
 
 Code Structure
 
@@ -21,7 +21,7 @@ Code Structure
 
     - ViewS/layouts/main.handlebars which contains default layout i.e template for handlebars
 
-    - test/app_spec.js - Contains end to end tests. Test cases include positive test cases like Status 200, page contains the right content for the right route . Negative test cases include testing 404 Error when a route does not exist
+    - test/app_spec.js - Contains end to end tests. Test cases include positive test cases like Status 200, page contains the right content when it hits the right route . Negative test cases include testing 404 Error when a route requested does not exist .I used chai-http which allows HTTP integration testing with Chai assertions. 
 
 
 Dependencies
