@@ -1,39 +1,38 @@
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var app = require('../app');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const app = require('../app');
+const should = require('should');
+const expect = chai.expect;
 
-var expect = chai.expect;
-
-var fileSystem = require('fs');
-var mdParser = require('marked')
-var path = require ('path');
+const fileSystem = require('fs');
+const mdParser = require('marked')
+const path = require ('path');
 
 chai.use(chaiHttp);
 
-describe('App', function() {
 
-  describe('check application is reachable', function() {
-    it('responds with status 200', function(done) {
+describe('App', () => { 
+    
+  describe('check application is reachable', () => {
+    it('responds with status 200', (done) => {
       chai.request('http://localhost:3000')
         .get('/')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.have.status(200);
           done();
         });
     });
   });
 
-  describe('check application is reachable', function() {
-    it('responds with status 400 path not found', function(done) {
+  describe('check application is reachable', () => {
+    it('responds with status 400 path not found', (done) => {
       chai.request('http://localhost:3000')
         .get('/values')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.have.status(404);
           done();
         });
     });
   });
 
-
-
-});
+})
