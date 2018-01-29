@@ -7,7 +7,6 @@
 # Design and Approach 
 
 
-
 I started with breaking down the problem into small steps. I narrowed down the main technologies to use i.e Express.js . node.js and Mocha and Chai. Next I moved on to the View Engine. After researching and trying different ones like Pug,EJS and Handlebar. I settled with  Handlebar as converting the markdown to Handlebar was straightforward with lot of existing libraries and compatible with test libraries Mocha and Chai. 
 
 I followed  a TDD approach. I started with the smallest functionality and Red-Green-Refactor.
@@ -17,16 +16,18 @@ Folder Structure includes a view folder that contains the default layout for han
 Tests include positive test cases like Status 200, page contains the right content for the right route . Negative test cases include testing 404 Error when a route does not exist. 
 
 Dependencies
+
     - Express-handlebars
     - node file-system 
     - Marked a Markdown parser 
 
 Future Improvement
-    - I would have liked to mock the calls and use stub for stubbing test data. 
+
+    - I would have liked to mock the calls and use stub for stubbing test data using Sinon.
 
 # Tech Stack 
 
-- Server: Express.js 
+- Node +  Express.js 
 - Package Manager: npm
 - View Template Engine : Handlebars
 - Testing : Mocha and Chai
