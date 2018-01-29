@@ -1,8 +1,9 @@
 #Tech Stack used
-Server: Express.js 
-Package Manager: npm
-View Template Engine : Handlebars
-Testing : Mocha and Chai
+
+- Server: Express.js 
+- Package Manager: npm
+- View Template Engine : Handlebars
+- Testing : Mocha and Chai
 
 
 # Static Content challenge
