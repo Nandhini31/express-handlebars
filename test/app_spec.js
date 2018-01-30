@@ -46,7 +46,6 @@ describe('App', () => {
       });  
 
       it('contains the right content for a different page', (done) => {
-        const content = ``
         chai.request('http://localhost:3000')
           .get('/about-page')
           .end((err, res) => {
