@@ -25,7 +25,7 @@ describe('App', () => {
         });
     });
 
-    it('responds with status 200 with valid path', (done) => {
+    it('responds with status 200 for valid path', (done) => {
         chai.request('http://localhost:3000')
           .get('/valves')
           .end((err, res) => {
@@ -35,7 +35,7 @@ describe('App', () => {
           });
       });
 
-      it('contains the right content', (done) => {
+      it('contains the right content for the route', (done) => {
         chai.request('http://localhost:3000')
           .get('/about-page')
           .end((err, res) => {
@@ -45,7 +45,7 @@ describe('App', () => {
           });
       });  
 
-      it('contains the right content for a different page', (done) => {
+      it('contains the right content for the route', (done) => {
         chai.request('http://localhost:3000')
           .get('/about-page')
           .end((err, res) => {
@@ -56,7 +56,7 @@ describe('App', () => {
       }); 
   });
 
-  describe('Checking invalid routes', () => {
+  describe('Checking returns error for invalid route', () => {
     it('responds with status 404 path not found', (done) => {
       chai.request('http://localhost:3000')
         .get('/values')
